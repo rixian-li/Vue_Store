@@ -1,0 +1,38 @@
+@import "../variables";
+
+$sidebar-background-color: $c-white !default;
+
+.sf-sidebar {
+  $this: &;
+  &__aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: $sidebar-background-color;
+    height: 100%;
+  }
+  &__circle-icon {
+    position: absolute;
+    right: 3.25rem / 2 * -1;
+    top: 5.625rem;
+    box-shadow: 0 4px 56px rgba(87, 87, 87, 0.32);
+  }
+  &--right {
+    #{$this}__aside {
+      left: auto;
+      right: 0;
+    }
+    #{$this}__circle-icon {
+      left: 3.25rem / 2 * -1;
+    }
+  }
+  &--mobile-only {
+    #{$this}__circle-icon {
+      display: none;
+    }
+  }
+  &--has-scroll-lock {
+    overflow: hidden;
+  }
+}
